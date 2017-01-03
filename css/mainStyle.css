@@ -15,9 +15,17 @@
 	border-left: groove rgb(125, 1, 0);
 }
 .navbar-right{
-	padding-top:10px;
+	padding-top:15px;
 	padding-right:100px;
 	color:white;
+}
+.navbar-left{
+	padding-top:10px;
+	padding-left:100px;
+	color:white;
+}
+.navbar-left h3{
+	font-family: 'Kumar One', cursive;
 }
 #principal{
 	background-color:grey;
