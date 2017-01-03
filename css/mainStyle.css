@@ -2,9 +2,6 @@
     padding-top: 70px;
     padding-bottom: 70px;
 }
-.nav{
-	
-}
 .navbar{
 	background-color:rgb(125, 1, 0);
 	margin-bottom:0;
@@ -24,9 +21,44 @@
 	padding-left:100px;
 	color:white;
 }
-.navbar-left h3{
+
+.navbar .navbar-brand{
 	font-family: 'Kumar One', cursive;
+	color:white;
+	padding-top:30px;
 }
+
 #principal{
 	background-color:grey;
+	padding-top:150px;
+	padding-bottom:150px;
+}
+#knowledge{
+	padding-top:0;
+}
+#knowledge #knowledge-cells{
+	padding-top:70px;
+	padding-bottom:70px;
+	background-color:rgb(51, 51, 51);
+	color:white;
+}
+#knowledge #knowledge-explain{
+	padding-top:50px;
+	padding-left:40px;
+}
+#contactus{
+	background-color:rgb(125, 1, 0);
+}
+.footer{
+	background-color:rgb(51, 51, 51);
+	padding-top: 40px;
+    padding-bottom: 40px;
+	color:white;
+}
+@media only screen and (max-width: 750px) {
+	.navbar .navbar-brand{
+		font-family: 'Kumar One', cursive;
+		color:white;
+		padding-top:20px;
+	}
 }

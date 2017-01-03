@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html.
 <html lang="en">
 <head>
-  <title>Bootstrap Theme Simply Me</title>
+  <title>RaulGF webSite-HOME</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,21 +11,59 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-		<ul class="nav navbar-nav navbar-left">
-			<h3>RAÚL GARCÍA FERNÁNDEZ</h3>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#">BLOG</a></li>
-			<li><a href="#">KNOWLEDGE</a></li>
-			<li><a href="#">CONTACT US</a></li>
-		</ul>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">RAÚL GARCÍA FERNÁNDEZ</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">BLOG</a></li>
+				<li><a href="#knowledge">KNOWLEDGE</a></li>
+				<li><a href="#contactus">CONTACT US</a></li>
+			</ul>
+		</div>
 	</nav>
-	<div id="principal" class="container-fluid bg-1 text-center">
+	<div id="principal" class="container-fluid bg-1 text-center" style="background-image:url('img/header.jpg');background-repeat:no-repeat;background-size:cover;">
 		<img height="200" width="200" class="img-circle" src="svg/myAvatar.svg" alt="Bird">
 		<h3>WEB DEVELOPER FULL STACK</h3>
 		<h4>Trying to specialize on machine learning</h4>
 	</div>
+	<div id="knowledge" class="container-fluid bg-2 text-center">
+		<div id="knowledge-cells" class="row">
+			<div class="col-md-4">
+				<img height="150" width="150"  src="svg/database.svg" alt="Bird">
+				<br></br>
+				<h4>Database and persistent.</h4>
+			</div>
+			<div class="col-md-4">
+				<img height="150" width="150"  src="svg/backend.svg" alt="Bird">
+				<br></br>
+				<h4>Server and background.</h4>
+			</div>
+			<div class="col-md-4">
+				<img height="150" width="150"  src="svg/frontend.svg" alt="Bird">
+				<br></br>
+				<h4>Frontend and client-side.</h4>
+			</div>
+		</div>
+		<div id="knowledge-explain" class="text-left">
+			<p>Here i put some explication</p>
+		</div>
+	</div>
+	<div id="contactus" class="container-fluid bg-3 text-center">
+		<h3>What Am I?</h3>
+		<p>Lorem ipsum..</p>
+		<a href="#" class="btn btn-default btn-lg">Search</a>
+	</div>
+	<footer class="footer text-center">
+		<p>Desing by: Raúl Garcia Fernandez | 01/2017 Site version: 2.0.0</p>
+	</footer>
 
 </body>
 </html>
