@@ -9,8 +9,9 @@
   <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 </head>
-<body>
+<body ng-app="myApp">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -36,26 +37,26 @@
 		<h4>Trying to specialize on machine learning</h4>
 		<button class="btn-default btn-lg btn-success"><b id="estado">Studing</b></button>
 	</div>
-	<div id="knowledge" class="container-fluid bg-2 text-center">
+	<div id="knowledge" class="container-fluid bg-2 text-center" ng-controller="selectExplain">
 		<div id="knowledge-cells" class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 explain selectExplain" id="database" ng-click="selectDatabase()">
 				<img height="150" width="150"  src="svg/database.svg" alt="Bird">
 				<br></br>
 				<h4>Database and persistent.</h4>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 explain" id="server" ng-click="selectServer()">
 				<img height="150" width="150"  src="svg/backend.svg" alt="Bird">
 				<br></br>
 				<h4>Server and background.</h4>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 explain" id="client" ng-click="selectFrontEnd()">
 				<img height="150" width="150"  src="svg/frontend.svg" alt="Bird">
 				<br></br>
 				<h4>Frontend and client-side.</h4>
 			</div>
 		</div>
-		<div id="knowledge-explain" class="text-left">
-			<p>Here i put some explication, but not today</p>
+		<div id="knowledge-explain">
+			<database-document id='knowledgeDocument'><database-document/>
 		</div>
 	</div>
 	
@@ -89,6 +90,53 @@
 	<footer class="footer text-center">
 		<p>Desing by: Raúl Garcia Fernandez | 01/2017 Site version: 2.0.0</p>
 	</footer>
-
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script>
+		var app= angular.module('myApp', []);
+		app.directive("serverDocument", function() {
+			return {
+				templateUrl : "doc/server.html"
+			};
+		});
+		app.directive("frontEndDocument", function() {
+			return {
+				templateUrl : "doc/frontend.html"
+			};
+		});
+		app.directive("databaseDocument", function() {
+			return {
+				templateUrl : "doc/database.html"
+			};
+		});
+		app.controller('selectExplain', function($scope,$compile) {
+			$scope.selectDatabase=function(){
+				$( "#database").addClass( "selectExplain" );
+				$( "#client").removeClass( "selectExplain" );
+				$( "#server").removeClass( "selectExplain" );
+				$("#knowledgeDocument").remove();
+				var el = $compile("<database-document id='knowledgeDocument'></database-document>")($scope);
+				$("#knowledge-explain").append(el);
+			};
+			$scope.selectFrontEnd=function(){
+				$( "#database").removeClass( "selectExplain" );
+				$( "#client").addClass( "selectExplain" );
+				$( "#server").removeClass( "selectExplain" );
+				$("#knowledgeDocument").remove();
+				var el = $compile("<front-end-document id='knowledgeDocument'></front-end-document>")($scope);
+				$("#knowledge-explain").append(el);
+			};
+			$scope.selectServer=function(){
+				$( "#database").removeClass( "selectExplain" );
+				$( "#client").removeClass( "selectExplain" );
+				$( "#server").addClass( "selectExplain" );
+				$("#knowledgeDocument").remove();
+				var el = $compile("<server-document id='knowledgeDocument'></server-document>")($scope);
+				$("#knowledge-explain").append(el);
+			};
+		});
+		
+	</script>
+	
 </body>
 </html>
